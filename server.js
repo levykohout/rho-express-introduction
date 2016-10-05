@@ -35,6 +35,19 @@ app.get('/kittens', function(req, res){
   }
 });
 
+var songs = [];
+
+app.post('/songs', function(req, res){
+  console.log('req.body:', req.body);
+  songs.push(req.body);
+  console.log('songs', songs);
+  res.sendStatus(200);
+});
+
+app.get('/songs', function(req, res){
+  res.send(songs);
+});
+
 // middleware for serving static files
 app.use(express.static('public'));
 

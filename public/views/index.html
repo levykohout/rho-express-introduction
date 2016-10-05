@@ -5,9 +5,24 @@
     <title></title>
 
     <!-- localhost:3000/js/client.js -->
+    <script src="vendor/jquery/dist/jquery.min.js" charset="utf-8"></script>
     <script src="js/client.js" charset="utf-8"></script>
   </head>
   <body>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <h1>Favorite Songs:</h1>
+    <ul id='songs'>
+
+    </ul>
+
+    <h2>Add a new song:</h2>
+    <form>
+      <label>Title</label>
+      <input type="text" name="title"/>
+
+      <label>Artist</label>
+      <input type="text" name="artist"/>
+
+      <input type="submit"/>
+    </form>
   </body>
 </html>
