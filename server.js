@@ -37,24 +37,28 @@ app.get('/kittens', function(req, res){
 });
 
 var songs = [];
-
+var duplicate = false;
 app.post('/songs', function(req, res){
 // var title = req.body.title;
 // var artist = req.body.artist;
-function checkDuplicate(){
-    songs.forEach(function(song){
+
+
+songs.forEach(function(song){
     if (song.title==req.body.title && song.artist==req.body.artist){
-    return true;
-  }
-});
+    duplicate = true;
 }
 
-if(req.body.title=="" || req.body.artist==""){
+console.log(duplicate);
+});
+
+
+if (duplicate==true){
+      res.sendStatus(409);
+      duplicate=false;
+} else if(req.body.title=="" || req.body.artist==""){
   res.sendStatus(400);
 } else if (songs.length===0){
     addSong();
-} else if (checkDuplicate()==true){
-      res.sendStatus(409);
 } else {
       addSong();
    }
